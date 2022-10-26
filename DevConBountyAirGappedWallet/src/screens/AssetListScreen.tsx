@@ -7,11 +7,11 @@ import {
   StatusBar,
   StyleSheet,
   Text,
-  Touchable,
-  useColorScheme,
   View,
+  ViewStyle,
 } from 'react-native';
 import AssetCard from '../components/AssetCard';
+import Spacer from '../components/Spacer';
 
 import {RootNavigationStack} from '../RootNavigator';
 
@@ -27,11 +27,54 @@ const AssetListScreen: React.FC<Props> = ({navigation, route}) => {
       <FlatList
         data={[{key: 1}, {key: 2}, {key: 3}, {key: 4}, {key: 5}]}
         renderItem={({item}) => (
-          <AssetCard assetId={item.key} handlePress={() => onPress(item.key)} />
+          <AssetCard
+            styles={showStyles}
+            assetId={item.key}
+            handlePress={() => onPress(item.key)}
+          />
         )}
+        ItemSeparatorComponent={Spacer}
+        contentContainerStyle={{
+          paddingTop: 20,
+          paddingBottom: 20,
+          paddingHorizontal: 20,
+        }}
+        ListEmptyComponent={<Text>nothing</Text>}
+        // ListHeaderComponent={<Text>Asset List</Text>}
+        // ListFooterComponent={isLoading ? <Spinner /> : null}
       />
     </View>
   );
+};
+
+const showStyles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    borderRadius: 10,
+  },
+  textContainer: {
+    flexDirection: 'column',
+    width: '70%',
+    paddingVertical: 20,
+    marginRight: 10,
+    backgroundColor: '#DDDDDD',
+  },
+  image: {
+    width: 82,
+    height: 82,
+    marginRight: 15,
+    backgroundColor: '#DDDDDD',
+  },
+  title: {
+    width: '100%',
+    fontWeight: 'bold',
+  },
+  status: {
+    width: '100%',
+  },
+}) as {
+  container: ViewStyle;
+  image: ViewStyle;
 };
 
 export default AssetListScreen;
