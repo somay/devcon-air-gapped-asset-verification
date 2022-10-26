@@ -23,7 +23,7 @@ const AssetDetailScreen: React.FC<Props> = ({navigation, route}) => {
   };
   return (
     <View>
-      <Text>key is {assetId.toString()}</Text>
+      <Text>asset id is {assetId.toString()}</Text>
       <DelegateButton handleDelegate={handleDelegate} />
     </View>
   );

@@ -11,6 +11,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import AssetCard from '../components/AssetCard';
 
 import {RootNavigationStack} from '../RootNavigator';
 
@@ -26,9 +27,7 @@ const AssetListScreen: React.FC<Props> = ({navigation, route}) => {
       <FlatList
         data={[{key: 1}, {key: 2}, {key: 3}, {key: 4}, {key: 5}]}
         renderItem={({item}) => (
-          <Text onPress={() => onPress(item.key)}>
-            Go to asset {item.key} detail
-          </Text>
+          <AssetCard assetId={item.key} handlePress={() => onPress(item.key)} />
         )}
       />
     </View>
