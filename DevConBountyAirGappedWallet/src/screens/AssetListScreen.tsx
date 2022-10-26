@@ -22,6 +22,11 @@ const AssetListScreen: React.FC<Props> = ({navigation, route}) => {
   const onPress = (key: number) => {
     navigation.navigate('AssetDetailScreen', {assetId: key});
   };
+
+  const isDelegated = (assetId: number) => {
+    return assetId - 3 < 0;
+  };
+
   return (
     <View>
       <FlatList
@@ -30,6 +35,7 @@ const AssetListScreen: React.FC<Props> = ({navigation, route}) => {
           <AssetCard
             styles={showStyles}
             assetId={item.key}
+            isDelegated={isDelegated(item.key)}
             handlePress={() => onPress(item.key)}
           />
         )}
