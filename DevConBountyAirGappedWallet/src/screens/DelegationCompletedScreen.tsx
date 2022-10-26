@@ -1,4 +1,5 @@
-import React, {type PropsWithChildren} from 'react';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import React from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -9,7 +10,15 @@ import {
   View,
 } from 'react-native';
 
-const DelegationCompletedScreen: React.FC<PropsWithChildren<{}>> = () => {
+import {RootNavigationStack} from '../RootNavigator';
+
+interface Props
+  extends NativeStackScreenProps<
+    RootNavigationStack,
+    'DelegationCompletedScreen'
+  > {}
+
+const DelegationCompletedScreen: React.FC<Props> = () => {
   return (
     <View>
       <Text>Delegation Completed!</Text>
