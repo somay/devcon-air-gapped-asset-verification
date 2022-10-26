@@ -1,12 +1,21 @@
 import React from 'react';
-import {Button, Text, useColorScheme} from 'react-native';
+import {Button, View} from 'react-native';
 
 interface Props {
   handleDelegate: () => void;
+  isDelegated: boolean;
 }
 
-const DelegateButton: React.FC<Props> = ({handleDelegate}) => {
-  return <Button title={'Delegate'} onPress={handleDelegate} />;
+const DelegateButton: React.FC<Props> = ({handleDelegate, isDelegated}) => {
+  return (
+    <View>
+      <Button
+        disabled={isDelegated}
+        title={'Delegate'}
+        onPress={handleDelegate}
+      />
+    </View>
+  );
 };
 
 export default DelegateButton;
