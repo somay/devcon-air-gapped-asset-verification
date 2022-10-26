@@ -6,8 +6,12 @@ import AssetListScreen from './screens/AssetListScreen';
 import AssetDetailScreen from './screens/AssetDetailScreen';
 import DelegationCompletedScreen from './screens/DelegationCompletedScreen';
 import DelegationFormScreen from './screens/DelegationFormScreen';
+import AccountCreationScreen from './screens/AccountCreationScreen';
+import AccountDetailScreen from './screens/AccountDetailScreen';
 
 export type RootNavigationStack = {
+  AccountCreationScreen: undefined;
+  AccountDetailScreen: undefined;
   AssetListScreen: undefined;
   AssetDetailScreen: {assetId: number};
   DelegationCompletedScreen: undefined;
@@ -25,6 +29,16 @@ export const RootNavigator: React.FC<RootNavigatorProps> = props => {
     <NavigationContainer independent>
       <View style={{flex: 1}}>
         <Stack.Navigator>
+          <Stack.Screen
+            name="AccountCreationScreen"
+            component={AccountCreationScreen}
+            // initialParams={props}
+          />
+          <Stack.Screen
+            name="AccountDetailScreen"
+            component={AccountDetailScreen}
+            // initialParams={props}
+          />
           <Stack.Screen
             name="AssetListScreen"
             component={AssetListScreen}
