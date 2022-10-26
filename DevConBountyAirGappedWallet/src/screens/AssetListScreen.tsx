@@ -33,7 +33,7 @@ const AssetListScreen: React.FC<Props> = ({navigation, route}) => {
         data={[{key: 1}, {key: 2}, {key: 3}, {key: 4}, {key: 5}]}
         renderItem={({item}) => (
           <AssetCard
-            styles={showStyles}
+            styles={styles}
             assetId={item.key}
             isDelegated={isDelegated(item.key)}
             handlePress={() => onPress(item.key)}
@@ -53,7 +53,7 @@ const AssetListScreen: React.FC<Props> = ({navigation, route}) => {
   );
 };
 
-const showStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     borderRadius: 10,
