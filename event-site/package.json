@@ -1,5 +1,5 @@
 {
-  "name": "try-wallet-connect",
+  "name": "event-site",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,20 +10,24 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@walletconnect/qrcode-modal": "^1.8.0",
-    "@walletconnect/sign-client": "^2.1.0",
+    "did-jwt": "^6.9.0",
+    "did-resolver": "^4.0.1",
     "ethers": "^5.7.2",
+    "ethr-did-resolver": "^7.0.2",
     "js-base64": "^3.7.2",
     "qrcode.react": "^3.1.0",
+    "query-string": "^7.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-dotenv": "^0.1.3",
     "react-scripts": "5.0.1",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-dotenv && react-scripts start",
+    "build": "react-dotenv && react-scripts build",
+    "serve": "react-dotenv && serve build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -45,8 +49,16 @@
       "last 1 safari version"
     ]
   },
+  "react-dotenv": {
+    "whitelist": [
+      "INFURA_ENDPOINT",
+      "ERC721_CONTRACT_ADDRESS",
+      "EVENT_SITE_ADDRESS",
+      "EVENT_SITE_PRIVATE_KEY",
+      "CLIENT_ID"
+    ]
+  },
   "devDependencies": {
-    "@walletconnect/jsonrpc-types": "^1.0.1",
-    "@walletconnect/types": "^2.1.0"
+    "prettier": "^2.7.1"
   }
 }

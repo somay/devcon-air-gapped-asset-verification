@@ -12,7 +12,7 @@ import {
 import {RootNavigationStack} from '../RootNavigator';
 
 interface Props
-  extends NativeStackScreenProps<RootNavigationStack, 'AssetDetailScreen'> {}
+  extends NativeStackScreenProps<RootNavigationStack, 'AccountDetailScreen'> {}
 
 const AccountDetailScreen: React.FC<Props> = ({navigation, route}) => {
   return (

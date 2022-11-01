@@ -10,18 +10,31 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@datasign/siop": "0.7.1",
+    "@ethersproject/shims": "^5.7.0",
+    "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.1",
+    "did-jwt-vc": "^1.0.0",
+    "did-resolver": "^3.1.0",
+    "ethers": "^5.7.2",
+    "ethr-did-resolver": "^4.0.0",
+    "node-libs-react-native": "^1.2.1",
     "react": "18.1.0",
     "react-native": "0.70.3",
+    "react-native-dotenv": "^3.3.1",
+    "react-native-get-random-values": "^1.8.0",
     "react-native-safe-area-context": "^4.4.1",
-    "react-native-screens": "^3.18.2"
+    "react-native-screens": "^3.18.2",
+    "react-native-sensitive-info": "^5.5.8",
+    "web-encoding": "^1.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
     "@tsconfig/react-native": "^2.0.2",
+    "@types/elliptic": "^6.4.12",
     "@types/jest": "^26.0.23",
     "@types/react": "^18.0.21",
     "@types/react-native": "^0.70.4",

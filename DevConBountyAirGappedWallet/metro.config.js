@@ -5,6 +5,9 @@
  * @format
  */
 
+const nodeLibs = require('node-libs-react-native');
+nodeLibs.crypto = null;
+
 module.exports = {
   transformer: {
     getTransformOptions: async () => ({
@@ -14,4 +17,8 @@ module.exports = {
       },
     }),
   },
+  resolver: {
+    extraNodeModules: nodeLibs,
+  },
+  resetCache: true,
 };
