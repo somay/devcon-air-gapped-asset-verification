@@ -24,6 +24,24 @@ For visual explanation please go to [SCREENSHOTS.md](./SCREENSHOTS.md).
 1. Decide which address to use for which app
     1. We suggest to use arbitrary ones for the DID wallet and the event organizer, and one owning some of your NFTs for the air-gapped wallet.
 1. edit environment variables on `DevConBountyAirGappedWallet/.env`, `event-site/.env`. Addresses chosen above should be written these files.
+
+[`DevConBountyAirGappedWallet/.env`](./DevConBountyAirGappedWallet/.env) should be like below. This ethereum address is the one you'll bring to the event.
+
+```env
+PRIVATE_KEY=<hex representation of private key paired with the address below. No need of 0x prefix>
+ADDRESS=<ethereum address pair with the above private key.>
+```
+
+[`event-site/.env`](./event-site/.env) is like this.
+
+```env
+INFURA_ENDPOINT=https://mainnet.infura.io/v3/<your infura project id>
+ERC721_CONTRACT_ADDRESS=<Asset (NFT) smart contract address>
+EVENT_SITE_ADDRESS=<ethereum address of the event organizer.>
+EVENT_SITE_PRIVATE_KEY=<private key of the address above. the 0x prefix needed>
+CLIENT_ID=<url your event page web app instance is serving. must accept access from your mobile phone>
+```
+
 1. run `yarn install` on each directories: i.e. `cd event-site; yarn install; cd ../try-wallet-connect/; yarn install; cd ../DevConBountyAirGappedWallet; cd ..`
 1. run `bundle exec pod install` on the `DevConBountyAirGappedWallet/ios` directory
 1. run all apps. the commands are below.
@@ -39,14 +57,14 @@ cd DevConBountyAirGappedWallet # this is not an air-gapped wallet but a DID wall
 yarn ios # your physical device to scan QR codes
 ```
 
-## Notable technologies We Use
+## Notable Technologies We Use
 
 - EIP-712 `eth_signTypedData` JSON RPC: <https://eips.ethereum.org/EIPS/eip-712>
 - Ethereum EIP712 Signature 2021: <https://w3c-ccg.github.io/ethereum-eip712-signature-2021-spec/>
   - I was inspired by <https://energy-web-foundation.gitbook.io/energy-web/identity-at-ew/patterns/credentials>
 - WalletConnect
 - DID/VC
-- Self-Issued OpenID Provider: <https://openid.net/specs/openid-connect-self-issued-v2-1_0.html#name-cross-device-self-issued-op>
+- Self-Issued OpenID Provider: <https://openid.net/specs/openid-connect-self-issued-v2-1_0.html>
 - `did:ethr` DID Method
 - React Native
 - ERC721: <http://erc721.org/>

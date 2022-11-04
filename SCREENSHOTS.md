@@ -7,18 +7,18 @@ Click "connect" to start demo. This is the app in `try-wallet-connect` directory
 
 ![QR Code to create WalletConnect connection](./images/qrCodeWalletConnect.png)
 
-Scan the above QR Code with the crypto wallet's camera. then you confirm connection.
+Scan the above QR Code with the air-gapped wallet's camera. then you confirm connection. This wallet should have some ERC-721 assets in order to test our asset verification mechanism.
 ![When mobile wallet scans the code above](./images/02-connectWallet.PNG)
 
-Connection is established. Let's create a credential (VC). To do so you need to fill the form on the page.
+Connection is established. Let's create a credential (VC). To do so you need to fill the form on the page. Fill the address column with your hot wallet's address.
 
 ![The next step is to create VC. The user needs to fill information about the VC to be created](./images/issueCredentialFormFilled.png)
 
-When you click "create!", your crypto wallet ask you confirmation again.
+When you click "create!", your air-gapped wallet ask you confirmation again.
 
 ![The page request eth_signTypedData to the wallet through WalletConnect](./images/04-SignTypedData.png)
 
-Then this code appears in the page. This one needs to be scaned by the mobile phone's camera app.
+Then this code appears in the page. This one needs to be scaned by the mobile phone's camera app. our DID wallet app should be installed in the mobile phone.
 
 ![VC has been created. Now we need to share it to the DID wallet](./images/qrCodeVc.png)
 
@@ -30,7 +30,7 @@ You've received the credential. Nothing happens in this screen. Go to the next s
 
 ![Receive VC](./images/06-receiveVc.PNG)
 
-Scan this code with your mobile phone. This is the app in the `event-site` directory.
+Scan this code with your mobile phone. This is the web app in the `event-site` directory.
 
 ![Next is to scan this QR code to prove ownership](./images/qrCodeToVerifyOwnership.png)
 
